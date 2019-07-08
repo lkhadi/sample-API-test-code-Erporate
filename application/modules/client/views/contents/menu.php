@@ -2,7 +2,7 @@
 	<div class="jumbotron">
 		<button class="btn btn-primary float-right" id="tombol_tambah_menu">Tambah Menu</button>
 	</div>
-	<div id="daftar_menu" class="table-responsize">
+	<div id="daftar_menu" class="table-responsive">
 		<table class="table table-hover">
 			<thead>
 				<tr>

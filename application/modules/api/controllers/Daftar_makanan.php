@@ -47,7 +47,8 @@ class Daftar_makanan extends MX_Controller{
   }
 
   function menu_get($id=null){
-    $jwt = $this->get('jwt');
+    $token = explode(" ", getallheaders()['Authorization']);
+    $jwt = $token[1];
     $tipe = $this->get('jenis');
     if($jwt){
       try{
@@ -70,7 +71,9 @@ class Daftar_makanan extends MX_Controller{
     }
   }
 
-  function menu_delete($id=null,$jwt=null){
+  function menu_delete($id=null){
+    $token = explode(" ", getallheaders()['Authorization']);
+    $jwt = $token[1];
     if($jwt && $id){
       try{
         $decode = JWT::decode($jwt,$this->key,array('HS256'));
@@ -81,10 +84,10 @@ class Daftar_makanan extends MX_Controller{
         $this->response($message,200);
       }catch(Exception $e){
         $message['message'] = "Access Denied!";
-        $this->response($message,401);
+        $this->response($jwt,401);
       }
     }else{
-      $message['message'] = "Access Denied!";
+      $message['message'] = $jwt;
       $this->response($message,401);
     }
   }

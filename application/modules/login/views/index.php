@@ -10,8 +10,8 @@
 	<div class="container">
 		<div class="jumbotron">
 			<h3 class="text-center">Web System Kasir</h3>
-			<?php echo $this->session->flashdata('alert');?>
-			<form method="POST">
+			<div id="show_alert"></div>
+			<form method="POST" id="form_login">
 				<div class="form-group">
 					<label>Username</label>
 					<input type="text" name="username" required="" class="form-control">

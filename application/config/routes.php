@@ -50,7 +50,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 |		my-controller/my-method	-> my_controller/my_method
 */
 $route['default_controller'] = 'login';
-$route['logout'] = 'login/logout';
+$route['logout'] = 'client/logout';
 $route['home'] = 'client';
 $route['daftar_menu'] = 'client/menu';
 $route['pesanan'] = 'client/pesanan';
@@ -59,7 +59,8 @@ $route['hapus_menu/(:num)'] = 'client/hapus_menu/$1';
 $route['api/tambah_menu'] = 'api/daftar_makanan/menu';
 $route['api/tampil_menu'] = 'api/daftar_makanan/menu';
 $route['api/tampil_menu/(:num)'] = 'api/daftar_makanan/menu/$1';
-$route['api/hapus_menu/(:num)/(:any)'] = 'api/daftar_makanan/menu/$1/$2';
+$route['api/hapus_menu/(:num)'] = 'api/daftar_makanan/menu/$1';
 $route['api/update_menu'] = 'api/daftar_makanan/menu';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
+$route['api/auth/validation'] = 'api/login/validation';

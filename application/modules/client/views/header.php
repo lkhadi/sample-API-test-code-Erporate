@@ -16,7 +16,7 @@
 			<div class="collapse navbar-collapse" id="collapsibleNavbar">
 			  <ul class="navbar-nav">
 			    <li class="nav-item">
-			      <a class="nav-link" href="<?php echo base_url();?>">Home</a>
+			      <a class="nav-link" href="<?php echo base_url('home');?>">Home</a>
 			    </li>
 			    <li class="nav-item">
 			      <a class="nav-link" href="<?php echo base_url('daftar_menu');?>">Menu</a>
@@ -24,7 +24,11 @@
 			    <li class="nav-item">
 			      <a class="nav-link" href="<?php echo base_url('pesanan');?>">Pesanan</a>
 			    </li>
-			    		    
+			    <?php if($role==='pelayan'): ?>
+			    <li class="nav-item">
+			      <a class="nav-link" href="<?php echo base_url('riwayat');?>">Riwayat</a>
+			    </li>
+			    <?php endif;?>    
 			  </ul>
 			  <ul class="navbar-nav ml-auto justify-content-between">
 			  	<li class="nav-item ">

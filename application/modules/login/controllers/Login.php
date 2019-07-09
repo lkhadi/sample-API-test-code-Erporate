@@ -18,8 +18,9 @@ class Login extends MX_Controller{
 			);
 
 			$context  = stream_context_create($opts);
-			if(@file_get_contents(base_url('api/auth/validation'), false, $context)){
-				redirect('home','refresh');
+			if($data=@file_get_contents(base_url('api/auth/validation'), false, $context)){
+				$result = json_decode($data);
+				redirect('home','refresh');				
 			}
 	}
 

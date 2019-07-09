@@ -7,10 +7,10 @@
 5. JWT library https://github.com/firebase/php-jwt v5.0.0
 
 ================================================================= <br>
-1.Kasir
-username = kasir
+1.Kasir<br>
+username = kasir<br>
 password = kasir
 <br>
-2.Pelayan
-username = pelayan
+2.Pelayan <br>
+username = pelayan <br>
 password = pelayan

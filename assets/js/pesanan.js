@@ -170,7 +170,7 @@ $(document).on("click","#konfirm_tutup_psn",function(){
 	var id = $(this).val();
 		$.ajax({
 			url: url+"api/tutup_pesanan",
-			type: "PUT",
+			type: "POST",
 			data: {id_pesanan: id,jwt: jwt},
 			success: function(result){
 				show_pesanan();
@@ -200,7 +200,7 @@ $(document).on("submit","#form_ubah_pesanan",function(e){
 	formData = JSON.stringify(o);
 	$.ajax({
 		url: url+"api/update_pesanan",
-		type: "PUT",
+		type: "POST",
 		contentType: "application/json",
 		data: formData,
 		success: function(result){

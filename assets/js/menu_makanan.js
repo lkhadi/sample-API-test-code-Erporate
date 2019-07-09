@@ -116,7 +116,7 @@ function tambah_data(formdata){
 function update_data(formdata){
 	$.ajax({
 		url: url+"api/update_menu",
-		type: "PUT",
+		type: "POST",
 		data: formdata,
 		contentType: "application/json",
 		success: function () {

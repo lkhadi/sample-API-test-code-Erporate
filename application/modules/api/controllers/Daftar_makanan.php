@@ -106,19 +106,19 @@ class Daftar_makanan extends MX_Controller{
       $this->response($message,401);
     }
   }
-
-  function menu_put(){
-    $jwt = $this->put('jwt');
-    $id = $this->put('id_menu');
+//Tidak menggunakan put karena bermasalah dihosting
+  function mmenu_post(){
+    $jwt = $this->post('jwt');
+    $id = $this->post('id_menu');
     if($jwt && $id){
       try{
         $decode = JWT::decode($jwt,$this->key,array('HS256'));
         if($decode){
           $kondisi['id_menu'] = $id;
-          $data['nama_menu'] = strip_tags($this->put('nama_menu'));
-          $data['harga'] = strip_tags($this->put('harga'));
-          $data['tipe'] = strip_tags($this->put('tipe'));
-          $data['status'] = strip_tags($this->put('status'));
+          $data['nama_menu'] = strip_tags($this->post('nama_menu'));
+          $data['harga'] = strip_tags($this->post('harga'));
+          $data['tipe'] = strip_tags($this->post('tipe'));
+          $data['status'] = strip_tags($this->post('status'));
           $this->menu_model->update_menu($kondisi,$data);
           $message['message'] = "Menu telah diupdate!";
           $message['status'] = TRUE;
@@ -221,12 +221,12 @@ class Daftar_makanan extends MX_Controller{
     }
   }
 
-  function pesanan_put(){
-    $jwt = $this->put('jwt');
-    $total_harga = $this->put('harga');
-    $makanan = ($this->put('makanan[]') ? $this->put('makanan[]') : array());
-    $minuman = ($this->put('minuman[]') ? $this->put('minuman[]') : array());
-    $no_pesanan = $this->put('id_pesanan');
+  function ppesanan_post(){
+    $jwt = $this->post('jwt');
+    $total_harga = $this->post('harga');
+    $makanan = ($this->post('makanan[]') ? $this->post('makanan[]') : array());
+    $minuman = ($this->post('minuman[]') ? $this->post('minuman[]') : array());
+    $no_pesanan = $this->post('id_pesanan');
     if($jwt && $no_pesanan){
       try{
         $decode = JWT::decode($jwt,$this->key,array('HS256'));
@@ -325,9 +325,9 @@ class Daftar_makanan extends MX_Controller{
     }
   }
 
-  function tutup_put(){
-    $jwt = $this->put('jwt');
-    $id = $this->put('id_pesanan');
+  function tutup_post(){
+    $jwt = $this->post('jwt');
+    $id = $this->post('id_pesanan');
     if($jwt && $id){
       try{
         $decode = JWT::decode($jwt,$this->key,array('HS256'));

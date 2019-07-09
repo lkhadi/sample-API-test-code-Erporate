@@ -63,7 +63,7 @@ class Client extends MX_Controller{
 			$opts = array('http' =>
 			    array(
 			        'method'  => 'GET',
-			        'header'  => 'Authorization: Bearer '.$this->input->cookie('jwt')
+			        'header'  => 'authorization: Bearer '.$this->input->cookie('jwt')
 			    )
 			);
 

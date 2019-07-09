@@ -45,7 +45,7 @@ function delete_data(id){
 		url: url+"api/hapus_menu/"+id,
 		type: "DELETE",
 		beforeSend: function(request) {
-		    request.setRequestHeader("Authorization", "Bearer "+jwt);
+		    request.setRequestHeader("authorization", "Bearer "+jwt);
 		},		
 		contentType: "application/json",
 		success: function () {
@@ -61,7 +61,7 @@ function show_data(){
 		url: url+"api/tampil_menu",
 		type: "GET",
 		beforeSend: function(request) {
-		    request.setRequestHeader("Authorization", "Bearer "+jwt);
+		    request.setRequestHeader("authorization", "Bearer "+jwt);
 		},
 		success: function (data) {
 			var table = "";
@@ -81,7 +81,7 @@ function get_a_data(id){
 		url: url+"api/tampil_menu/"+id,
 		type: "GET",
 		beforeSend: function(request) {
-		    request.setRequestHeader("Authorization", "Bearer "+jwt);
+		    request.setRequestHeader("authorization", "Bearer "+jwt);
 		},
 		success: function (data) {
 			var option = '';

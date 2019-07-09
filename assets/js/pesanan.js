@@ -4,7 +4,7 @@ $(document).on("click","#tombol_tambah_pesanan",function(){
 		url: url+"api/tampil_menu",
 		type: "GET",
 		beforeSend: function(request) {
-		    request.setRequestHeader("Authorization", "Bearer "+jwt);
+		    request.setRequestHeader("authorization", "Bearer "+jwt);
 		},
 		data: {jenis: "makanan"},
 		success: function(result){
@@ -19,7 +19,7 @@ $(document).on("click","#tombol_tambah_pesanan",function(){
 		url: url+"api/tampil_menu",
 		type: "GET",
 		beforeSend: function(request) {
-		    request.setRequestHeader("Authorization", "Bearer "+jwt);
+		    request.setRequestHeader("authorization", "Bearer "+jwt);
 		},
 		data: {jenis: "minuman"},
 		success: function(result){
@@ -95,7 +95,7 @@ $(document).on("click",".edit_pesanan",function(){
 		url: url+"api/tampil_menu",
 		type: "GET",
 		beforeSend: function(request) {
-		    request.setRequestHeader("Authorization", "Bearer "+jwt);
+		    request.setRequestHeader("authorization", "Bearer "+jwt);
 		},
 		data: {jenis: "makanan"},
 		success: function(result){
@@ -110,7 +110,7 @@ $(document).on("click",".edit_pesanan",function(){
 		url: url+"api/tampil_menu",
 		type: "GET",
 		beforeSend: function(request) {
-		    request.setRequestHeader("Authorization", "Bearer "+jwt);
+		    request.setRequestHeader("authorization", "Bearer "+jwt);
 		},
 		data: {jenis: "minuman"},
 		success: function(result){
@@ -125,7 +125,7 @@ $(document).on("click",".edit_pesanan",function(){
 		url: url+"api/tampil_pesanan",
 		type: "GET",
 		beforeSend: function(request) {
-		    request.setRequestHeader("Authorization", "Bearer "+jwt);
+		    request.setRequestHeader("authorization", "Bearer "+jwt);
 		},
 		data: {id_pesanan: id},
 		success: function(result){
@@ -217,7 +217,7 @@ function show_pesanan(){
 		url: url+"api/tampil_pesanan",
 		type: "GET",
 		beforeSend: function(request) {
-		    request.setRequestHeader("Authorization", "Bearer "+jwt);
+		    request.setRequestHeader("authorization", "Bearer "+jwt);
 		},
 		success: function(result){
 			var mark='';

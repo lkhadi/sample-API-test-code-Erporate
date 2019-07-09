@@ -44,16 +44,17 @@ class Login extends MX_Controller{
 			$context  = stream_context_create($opts);
 			if($result = @file_get_contents(base_url('api/login'), false, $context)){
 				$result = json_decode($result);
-				$cookie = array(
-	            "name" => "jwt",
-	            "value" => $result->jwt,
-	            "expire" => "2592000",
-	            "domain" => $_SERVER['HTTP_HOST'],
-	            "path" => "/",
-	            "secure" => FALSE,
-	            "httponly" => TRUE
-	         	 );
-	          	$this->input->set_cookie($cookie);
+				// $cookie = array(
+	   //          "name" => "jwt",
+	   //          "value" => $result->jwt,
+	   //          "expire" => "2592000",
+	   //          "domain" => $_SERVER['HTTP_HOST'],
+	   //          "path" => "/",
+	   //          "secure" => FALSE,
+	   //          "httponly" => TRUE
+	   //       	 );
+	   //        	$this->input->set_cookie($cookie);
+	          	setcookie('jwt', $result->jwt, time() + (86400 * 30),'/',$_SERVER['HTTP_HOST'],FALSE,TRUE);
 	          	redirect('home','refresh');
           	}else{
           		$this->load->view('index');

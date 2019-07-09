@@ -5,3 +5,12 @@
 3. MySQL 8.0.16 <br>
 4. Rest full library https://github.com/chriskacerguis/codeigniter-restserver <br>
 5. JWT library https://github.com/firebase/php-jwt v5.0.0
+
+================================================================= <br>
+1.Kasir<br>
+username = kasir<br>
+password = kasir
+<br>
+2.Pelayan <br>
+username = pelayan <br>
+password = pelayan

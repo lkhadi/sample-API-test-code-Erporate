@@ -51,7 +51,7 @@ class Daftar_makanan extends MX_Controller{
   }
 
   function menu_get($id=null){
-    $token = explode(" ", getallheaders()['Authorization']);
+    $token = explode(" ", getallheaders()['authorization']);
     $jwt = $token[1];
     $tipe = $this->get('jenis');
     if($jwt){
@@ -81,7 +81,7 @@ class Daftar_makanan extends MX_Controller{
   }
 
   function menu_delete($id=null){
-    $token = explode(" ", getallheaders()['Authorization']);
+    $token = explode(" ", getallheaders()['authorization']);
     $jwt = $token[1];
     if($jwt && $id){
       try{
@@ -284,7 +284,7 @@ class Daftar_makanan extends MX_Controller{
   }
 
   function pesanan_get(){
-    $token = explode(" ", getallheaders()['Authorization']);
+    $token = explode(" ", getallheaders()['authorization']);
     $jwt = $token[1];
     $id = $this->get('id_pesanan');
     $jenis = $this->get('jenis');
@@ -360,7 +360,7 @@ class Daftar_makanan extends MX_Controller{
   }
 
   function riwayat_get(){
-    $token = explode(" ", getallheaders()['Authorization']);
+    $token = explode(" ", getallheaders()['authorization']);
     $jwt = $token[1];
     if($jwt){
       try{
